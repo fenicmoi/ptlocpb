@@ -38,5 +38,28 @@
                 <?php } ?>
             </ul>
         </li>
+        <li class="menu-item <?php echo isActive('account') ?>">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-dock-top "></i>
+                <div>ข่าวประชาสัมพันธ์</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item <?php echo isActiveFile('profile') ?>">
+                    <a href="../account/profile.php" class="menu-link">
+                        <div>เพิ่มข่าวประชาสัมพันธ์</div>
+                    </a>
+                </li>
+                <?php if($_SESSION['AD_ROLE'] == "superadmin"){  ?>
+                <li class="menu-item <?php echo  in_array(pathCurrent(), $menuAdmin) ? 'active': '' ?>">
+                    <a href="../account/" class="menu-link">
+                        <div>Admin</div>
+                    </a>
+                </li>
+                <?php } ?>
+            </ul>
+        </li>
     </ul>
 </aside>
+
+<?php   
+?>
